@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modello 3D: Margherita</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #ffffff;
+      }
+      model-viewer {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <model-viewer
+      src="Margherita.glb"
+      alt="Modello 3D di una margherita"
+      auto-rotate
+      camera-controls
+      autoplay
+      ar
+      ar-modes="scene-viewer webxr quick-look"
+      shadow-intensity="1"
+      exposure="1.0"
+      environment-image="neutral"
+    ></model-viewer>
+  </body>
+</html>
