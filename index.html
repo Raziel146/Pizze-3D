@@ -1,44 +1,32 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pizza Margherita 3D</title>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: #fef9f4;
-    }
-    h1 {
-      margin-bottom: 1rem;
-    }
-    model-viewer {
-      width: 100%;
-      max-width: 600px;
-      height: 500px;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pizza AR</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      body { margin: 0; }
+      model-viewer { width: 100vw; height: 100vh; }
+    </style>
+  </head>
+  <body>
+    <model-viewer
+      src="../models/margherita.glb"
+      ios-src="../models/margherita.usdz"
+      ar
+      ar-modes="scene-viewer quick-look webxr"
+      autoplay
+      camera-controls
+      auto-rotate
+      alt="Pizza Margherita"
+      id="modelViewer">
+    </model-viewer>
 
-  <h1>Pizza Margherita</h1>
-
-  <model-viewer
-    src="../models/pizza-margherita.glb"
-    ios-src="../models/pizza-margherita.usdz"
-    ar
-    ar-modes="scene-viewer quick-look webxr"
-    camera-controls
-    auto-rotate
-    alt="Modello 3D della pizza Margherita">
-  </model-viewer>
-
-</body>
+    <script>
+      const viewer = document.getElementById('modelViewer');
+      window.addEventListener('DOMContentLoaded', () => {
+        viewer.activateAR();
+      });
+    </script>
+  </body>
 </html>
